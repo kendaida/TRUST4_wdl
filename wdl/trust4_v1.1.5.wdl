@@ -4,7 +4,7 @@ task TRUST4bamhg38 {
     input {
         File bam
         File BCR_TCR_ref
-        File IGMT_C
+        File IGMT_C_ref
         String samplename
         Int thread
         Int stage
