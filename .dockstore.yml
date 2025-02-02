@@ -2,5 +2,5 @@ version: 1.0
 workflows:
    -  name: trust4_v1_1_5
       subclass:  WDL
-      primaryDescriptorPath: trust4_v1.1.5.wdl
+      primaryDescriptorPath: wdl/trust4_v1.1.5.wdl
 
