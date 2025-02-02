@@ -10,7 +10,7 @@ task TRUST4bamhg38 {
     }
 
     command {
-        /home/TRUST4/run-trust4 -b ${bam} \
+        /usr/bin/run-trust4 -b ${bam} \
           -f /home/TRUST4/hg38_bcrtcr.fa --ref /home/TRUST4/human_IMGT+C.fa \
           -o ${samplename} \
           -t ${thread} \
