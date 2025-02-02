@@ -3,6 +3,8 @@ version 1.0
 task TRUST4bamhg38 {
     input {
         File bam
+        File BCR_TCR_ref
+        File IGMT_C
         String samplename
         Int thread
         Int stage
@@ -11,7 +13,7 @@ task TRUST4bamhg38 {
 
     command {
         /usr/bin/run-trust4 -b ${bam} \
-          -f /home/TRUST4/hg38_bcrtcr.fa --ref /home/TRUST4/human_IMGT+C.fa \
+          -f ${BCR_TCR_ref} --ref ${IGMT_C_ref} \
           -o ${samplename} \
           -t ${thread} \
           --stage ${stage}
