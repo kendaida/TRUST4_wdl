@@ -1,3 +1,4 @@
+dockstore-version: 1.2
 workflows:
    -  name: trust4_v1_1_5
       subclass:  WDL
