@@ -16,7 +16,7 @@ task TRUST4bamhg38 {
           -f {BCR_TCR_ref} --ref {IGMT_C_ref} \
           -o {samplename} \
           -t {thread} \
-          --stage ${stage}
+          --stage {stage}
 
         # 確実にファイルが生成されているかチェック
         ls -lh {samplename}_cdr3.out {samplename}_final.out {samplename}_report.tsv
