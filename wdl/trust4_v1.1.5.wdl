@@ -40,7 +40,7 @@ workflow TRUST4workflow {
         File bam
         File BCR_TCR_ref
         File IGMT_C_ref
-        String samplename  # Make sure this is explicitly declared
+        String samplename
         Int thread = 8
         Int stage = 0
         Int memory = 16
