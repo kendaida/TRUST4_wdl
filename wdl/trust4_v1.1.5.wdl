@@ -38,13 +38,15 @@ task TRUST4bamhg38 {
 workflow TRUST4workflow {
     input {
         File bam
+        File BCR_TCR_ref
+        File IGMT_C_ref
         String samplename
         Int thread
         Int stage
         Int memory
     }
 
-    call TRUST4bamhg38 { input: bam=bam, samplename=samplename, thread=thread, stage=stage, memory=memory }
+    call TRUST4bamhg38 { input: bam=bam, BCR_TCR_ref=BCR_TCR_ref, IGMT_C_ref=IGMT_C_ref, samplename=samplename, thread=thread, stage=stage, memory=memory }
 
     output {
         File out_cdr3 = TRUST4bamhg38.out_cdr3
