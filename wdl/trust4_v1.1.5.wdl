@@ -1,6 +1,5 @@
 version 1.0
 
-
 task TRUST4bamhg38 {
     input {
         File bam
@@ -18,6 +17,9 @@ task TRUST4bamhg38 {
           -o ${samplename} \
           -t ${thread} \
           --stage ${stage}
+
+        # 確実にファイルが生成されているかチェック
+        ls -lh ${samplename}_cdr3.out ${samplename}_final.out ${samplename}_report.tsv
     }
 
     output {
@@ -28,7 +30,6 @@ task TRUST4bamhg38 {
 
     runtime {
         docker: "quay.io/biocontainers/trust4:1.1.5--h5ca1c30_0"
-        memory: "${memory} GB"
-        disks: "local-disk 100 HDD"
+        memory: "${memory}GB"
     }
 }
