@@ -18,7 +18,7 @@ task TRUST4bamhg38 {
           -t ${thread} \
           --stage ${stage}
 
-        # 確実にファイルが生成されているかチェック
+
         ls -lh ${samplename}_cdr3.out ${samplename}_final.out ${samplename}_report.tsv
     }
 
