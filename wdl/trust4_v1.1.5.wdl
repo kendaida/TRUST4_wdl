@@ -12,7 +12,7 @@ task TRUST4bamhg38 {
     }
 
     command {
-        /usr/bin/run-trust4 -b ${bam} \
+        run-trust4 -b ${bam} \
           -f ${BCR_TCR_ref} --ref ${IGMT_C_ref} \
           -o ${samplename} \
           -t ${thread} \
