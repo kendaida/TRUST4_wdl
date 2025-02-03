@@ -31,19 +31,19 @@ task TRUST4bamhg38 {
     runtime {
         docker: "quay.io/biocontainers/trust4:1.1.5--h5ca1c30_0"
         memory: "${memory} GB"
-        disks: "local-disk 100 HDD"
+        disks: "local-disk ${size(bam) + 50} HDD"
     }
 }
 
 workflow TRUST4workflow {
     input {
-        File bam
+        Array[File] bams
         File BCR_TCR_ref
         File IGMT_C_ref
-        String samplename
-        Int thread
-        Int stage
-        Int memory
+        Array[String] samplenames
+        Int thread = 8
+        Int stage = 0
+        Int memory = 16
     }
 
     call TRUST4bamhg38 { input: bam=bam, BCR_TCR_ref=BCR_TCR_ref, IGMT_C_ref=IGMT_C_ref, samplename=samplename, thread=thread, stage=stage, memory=memory }
