@@ -48,12 +48,12 @@ workflow TRUST4workflow {
 
     call TRUST4bamhg38 { 
         input: 
-            bam=bam, 
-            BCR_TCR_ref=BCR_TCR_ref, 
-            IGMT_C_ref=IGMT_C_ref, 
-            samplename=samplename,
-            thread=thread, 
-            stage=stage, 
+            bam=bam 
+            BCR_TCR_ref=BCR_TCR_ref
+            IGMT_C_ref=IGMT_C_ref
+            samplename=samplename
+            thread=thread
+            stage=stage
             memory=memory 
     }
 
