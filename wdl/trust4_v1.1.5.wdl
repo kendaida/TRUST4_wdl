@@ -37,7 +37,7 @@ task TRUST4bamhg38 {
 
 workflow TRUST4workflow {
     input {
-        Array[File] bams
+        File bam
         File BCR_TCR_ref
         File IGMT_C_ref
         Array[String] samplenames
