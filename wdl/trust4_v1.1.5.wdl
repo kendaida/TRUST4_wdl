@@ -12,24 +12,25 @@ task TRUST4bamhg38 {
     }
 
     command {
-        /usr/bin/run-trust4 -b ${bam} \
-          -f ${BCR_TCR_ref} --ref ${IGMT_C_ref} \
-          -o ${samplename} \
-          -t ${thread} \
+        /usr/bin/run-trust4 -b {bam} \
+          -f {BCR_TCR_ref} --ref {IGMT_C_ref} \
+          -o {samplename} \
+          -t {thread} \
           --stage ${stage}
 
         # 確実にファイルが生成されているかチェック
-        ls -lh ${samplename}_cdr3.out ${samplename}_final.out ${samplename}_report.tsv
+        ls -lh {samplename}_cdr3.out {samplename}_final.out {samplename}_report.tsv
     }
 
     output {
-        File out_cdr3 = "${samplename}_cdr3.out"
-        File trust4final = "${samplename}_final.out"
-        File trust4report = "${samplename}_report.tsv"
+        File out_cdr3 = "{samplename}_cdr3.out"
+        File trust4final = "{samplename}_final.out"
+        File trust4report = "{samplename}_report.tsv"
     }
 
     runtime {
         docker: "quay.io/biocontainers/trust4:1.1.5--h5ca1c30_0"
-        memory: "${memory}GB"
+        memory: "{memory}GB"
+        disks: "local-disk 100 HDD"
     }
 }
