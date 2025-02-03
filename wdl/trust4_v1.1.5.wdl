@@ -1,4 +1,4 @@
-version 1.2
+version 1.0
 
 
 task TRUST4bamhg38 {
@@ -29,5 +29,6 @@ task TRUST4bamhg38 {
     runtime {
         docker: "quay.io/biocontainers/trust4:1.1.5--h5ca1c30_0"
         memory: "${memory} GB"
+        disks: "local-disk 100 HDD"
     }
 }
