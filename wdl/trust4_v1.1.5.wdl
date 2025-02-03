@@ -1,4 +1,5 @@
-version: 1.2
+version 1.2
+
 
 task TRUST4bamhg38 {
     input {
