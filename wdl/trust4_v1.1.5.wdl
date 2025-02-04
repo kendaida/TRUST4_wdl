@@ -31,7 +31,7 @@ task TRUST4bamhg38 {
     runtime {
         docker: "quay.io/biocontainers/trust4:1.1.5--h5ca1c30_0"
         memory: "${memory} GB"
-        disks: "local-disk ~{ceil(size(bam) + 50)} HDD"
+        disks: "local-disk ~{ceil(size(bam) / 1e9) + 50)} HDD"
     }
 }
 
